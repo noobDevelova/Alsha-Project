@@ -1,0 +1,96 @@
+[
+    {
+        "id": "W001",
+        "certifications": [],
+        "skills": [
+            "Engineer",
+            "Project Coordinator",
+            "Project Manager"
+        ],
+        "name": "PA"
+    },
+    {
+        "id": "W002",
+        "certifications": [],
+        "skills": [
+            "Support Engineer"
+        ],
+        "name": "AS"
+    },
+    {
+        "id": "W003",
+        "certifications": [
+            "sertifikasi - Kompetensi"
+        ],
+        "skills": [
+            "Engineer"
+        ],
+        "name": "AZ"
+    },
+    {
+        "id": "W004",
+        "certifications": [
+            "sertifikasi - Kompetensi",
+            "sertifikasi - K3",
+            "sertifikasi - IT"
+        ],
+        "skills": [
+            "Engineer"
+        ],
+        "name": "AF"
+    },
+    {
+        "id": "W005",
+        "certifications": [
+            "sertifikasi - MR",
+            "sertifikasi - K3"
+        ],
+        "skills": [
+            "SE Coordinator"
+        ],
+        "name": "HI"
+    },
+    {
+        "id": "W006",
+        "certifications": [
+            "Sertifikasi - IT"
+        ],
+        "skills": [
+            "SE Coordinator"
+        ],
+        "name": "IR"
+    },
+    {
+        "id": "W007",
+        "certifications": [
+            "Sertifikasi - Manajemen",
+            "Sertifikasi - Kompetensi",
+            "Sertifikasi - MR"
+        ],
+        "skills": [
+            "Support Engineer",
+            "SE Coordinator"
+        ],
+        "name": "NP"
+    },
+    {
+        "id": "W008",
+        "certifications": [
+            "Sertifikasi - Programmer"
+        ],
+        "skills": [
+            "SE Coordinator"
+        ],
+        "name": "AL"
+    },
+    {
+        "id": "W009",
+        "certifications": [
+            "Sertifikasi - Kompetensi"
+        ],
+        "skills": [
+            "Support Engineer"
+        ],
+        "name": "IS"
+    }
+]

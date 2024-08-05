@@ -1,0 +1,46 @@
+[
+    {
+        "required_certifications": [
+            "sertifikasi - IT",
+            "sertifikasi - K3"
+        ],
+        "required_skills": [
+            "Project Coordinator",
+            "Support Engineer"
+        ],
+        "project_name": "test"
+    },
+    {
+        "required_certifications": [
+            "Sertifikasi - IT",
+            "Sertifikasi - Instalasi"
+        ],
+        "required_skills": [
+            "SE Coordinator",
+            "Programmer"
+        ],
+        "project_name": "test project"
+    },
+    {
+        "required_certifications": [
+            "Sertifikasi - IT",
+            "Sertifikasi - K3"
+        ],
+        "required_skills": [
+            "Engineer",
+            "Project Manager"
+        ],
+        "project_name": "project A"
+    },
+    {
+        "required_certifications": [
+            "Sertifikasi - IT",
+            "Sertifikasi - K3"
+        ],
+        "required_skills": [
+            "Engineer",
+            "Project Manager"
+        ],
+        "project_name": "Project INS"
+    }
+]
