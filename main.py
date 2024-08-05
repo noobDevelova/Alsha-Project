@@ -173,8 +173,10 @@ def manage_data():
 
     if data_type == "Employees":
         st.subheader("Employees")
-        if st.button('Refresh Data'):
-            st.rerun()
+
+        # if st.button('Refresh Data'):
+        #     st.rerun()
+        
         employees = load_data('./employee_data.json')
         for i, employee in enumerate(employees):
             with st.expander(f"ID: {employee['id']}, Name: {employee['name']}"):
@@ -226,8 +228,10 @@ def manage_data():
 
     elif data_type == "Certifications":
         st.subheader("Certifications")
-        if st.button('Refresh Data'):
-            st.rerun()
+
+        # if st.button('Refresh Data'):
+        #     st.rerun()
+        
         certifications = load_data('./certifications.json')
         for i, certification in enumerate(certifications):
             with st.expander(certification):
@@ -252,8 +256,10 @@ def manage_data():
 
     elif data_type == "Skills":
         st.subheader("Skills")
-        if st.button('Refresh Data'):
-            st.rerun()
+
+        # if st.button('Refresh Data'):
+        #     st.rerun()
+        
         skills = load_data('./skills.json')
         for i, skill in enumerate(skills):
             with st.expander(skill):
@@ -279,8 +285,8 @@ def manage_data():
     elif data_type == "Projects":
         st.subheader("Projects")
         
-        if st.button('Refresh Data'):
-            st.rerun()
+        # if st.button('Refresh Data'):
+        #     st.rerun()
         
         projects = load_data('./project_data.json')
         

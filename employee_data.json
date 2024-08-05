@@ -55,5 +55,16 @@
             "SE Coordinator"
         ],
         "name": "HI"
+    },
+    {
+        "id": "W006",
+        "certifications": [
+            "Sertifikasi - IT",
+            "Sertifikasi - Instalasi"
+        ],
+        "skills": [
+            "Programmer"
+        ],
+        "name": "RR"
     }
 ]
