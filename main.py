@@ -275,7 +275,7 @@ def manage_data():
         st.subheader("Projects")
         if st.button('Refresh Data'):
             st.experimental_rerun()
-        projects = load_data('project_data.json')
+        projects = load_data('./project_data.json')
         for i, project in enumerate(projects):
             with st.expander(f"Project Name: {project['project_name']}"):
                 new_name = st.text_input("Edit Project Name", value=project['project_name'])
@@ -313,7 +313,7 @@ def manage_data():
                     "required_skills": new_project_skills
                 }
                 projects.append(new_project)
-                save_data(projects, 'project_data.json')
+                save_data(projects, './project_data.json')
                 st.success(f'Project {new_project_name} has been added!')
 
 # Main
