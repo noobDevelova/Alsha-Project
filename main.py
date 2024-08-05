@@ -273,48 +273,55 @@ def manage_data():
 
     elif data_type == "Projects":
         st.subheader("Projects")
-        if st.button('Refresh Data'):
-            st.rerun()
-        projects = load_data('./project_data.json')
-        for i, project in enumerate(projects):
-            with st.expander(f"Project Name: {project['project_name']}"):
-                new_name = st.text_input("Edit Project Name", value=project['project_name'])
-                
-                # Validasi agar default value juga ada dalam options
-                valid_project_certifications = [c for c in certifications_list if c in project['required_certifications']]
-                new_certifications = st.multiselect(
-                    "Edit Required Certifications", certifications_list, default=valid_project_certifications, key=f"edit_proj_cert_{i}"
-                )
-                
-                valid_project_skills = [s for s in skills_list if s in project['required_skills']]
-                new_skills = st.multiselect(
-                    "Edit Required Skills", skills_list, default=valid_project_skills, key=f"edit_proj_skill_{i}"
-                )
-                
-                if st.button(f"Save Changes {project['project_name']}", key=f"save_proj_changes_{i}"):
-                    project['project_name'] = new_name
-                    project['required_certifications'] = new_certifications
-                    project['required_skills'] = new_skills
-                    save_data(projects, './project_data.json')
-                    st.success(f'Project {project["project_name"]} has been updated!')
-                if st.button(f"Delete Project {project['project_name']}", key=f"delete_proj_{i}"):
-                    projects.remove(project)
-                    save_data(projects, './project_data.json')
-                    st.success(f'Project {project["project_name"]} has been deleted!')
-                    st.rerun()
-        new_project_name = st.text_input('Add new project name')
-        new_project_certifications = st.multiselect("Add Required Certifications", certifications_list, key="new_proj_cert")
-        new_project_skills = st.multiselect("Add Required Skills", skills_list, key="new_proj_skill")
-        if st.button('Add Project'):
-            if new_project_name:
-                new_project = {
-                    "project_name": new_project_name,
-                    "required_certifications": new_project_certifications,
-                    "required_skills": new_project_skills
-                }
-                projects.append(new_project)
+    
+    if st.button('Refresh Data'):
+        st.experimental_rerun()
+    
+    projects = load_data('./project_data.json')
+    
+    for i, project in enumerate(projects):
+        with st.expander(f"Project Name: {project['project_name']}"):
+            new_name = st.text_input(f"Edit Project Name {i}", value=project['project_name'], key=f"edit_proj_name_{i}")
+            
+            valid_project_certifications = [c for c in certifications_list if c in project['required_certifications']]
+            new_certifications = st.multiselect(
+                f"Edit Required Certifications {i}", certifications_list, default=valid_project_certifications, key=f"edit_proj_cert_{i}"
+            )
+            
+            valid_project_skills = [s for s in skills_list if s in project['required_skills']]
+            new_skills = st.multiselect(
+                f"Edit Required Skills {i}", skills_list, default=valid_project_skills, key=f"edit_proj_skill_{i}"
+            )
+            
+            if st.button(f"Save Changes {project['project_name']}", key=f"save_proj_changes_{i}"):
+                project['project_name'] = new_name
+                project['required_certifications'] = new_certifications
+                project['required_skills'] = new_skills
                 save_data(projects, './project_data.json')
-                st.success(f'Project {new_project_name} has been added!')
+                st.success(f'Project {project["project_name"]} has been updated!')
+                st.experimental_rerun()
+            
+            if st.button(f"Delete Project {project['project_name']}", key=f"delete_proj_{i}"):
+                projects.remove(project)
+                save_data(projects, './project_data.json')
+                st.success(f'Project {project["project_name"]} has been deleted!')
+                st.experimental_rerun()
+    
+    new_project_name = st.text_input('Add new project name', key="new_proj_name")
+    new_project_certifications = st.multiselect("Add Required Certifications", certifications_list, key="new_proj_cert")
+    new_project_skills = st.multiselect("Add Required Skills", skills_list, key="new_proj_skill")
+    
+    if st.button('Add Project', key="add_proj"):
+        if new_project_name:
+            new_project = {
+                "project_name": new_project_name,
+                "required_certifications": new_project_certifications,
+                "required_skills": new_project_skills
+            }
+            projects.append(new_project)
+            save_data(projects, './project_data.json')
+            st.success(f'Project {new_project_name} has been added!')
+            st.experimental_rerun()
 
 # Main
 worker_vectors = load_data('./employee_data.json')
