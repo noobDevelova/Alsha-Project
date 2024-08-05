@@ -160,9 +160,9 @@ def Home():
     st.title('Welcome to AlssaProjectSync Employee Placement Optimization')
     st.subheader("How to Use This Application")
     st.write("""
-    1. **Home**: View insights and results of the optimization process.
-    2. **Search Placement**: Find the best fit for your project based on input data.
-    3. **Manage Data**: Create, read, update, delete about employees and certifications
+    1. *Home*: View insights and results of the optimization process.
+    2. *Search Placement*: Find the best fit for your project based on input data.
+    3. *Manage Data*: Create, read, update, delete about employees and certifications
     """)
 
 # Tambahan pada fungsi manage_data
@@ -275,7 +275,7 @@ def manage_data():
         st.subheader("Projects")
         if st.button('Refresh Data'):
             st.experimental_rerun()
-        projects = load_data('project_data.json')
+        projects = load_data('./project_data.json')
         for i, project in enumerate(projects):
             with st.expander(f"Project Name: {project['project_name']}"):
                 new_name = st.text_input("Edit Project Name", value=project['project_name'])
@@ -313,7 +313,7 @@ def manage_data():
                     "required_skills": new_project_skills
                 }
                 projects.append(new_project)
-                save_data(projects, 'project_data.json')
+                save_data(projects, './project_data.json')
                 st.success(f'Project {new_project_name} has been added!')
 
 # Main
