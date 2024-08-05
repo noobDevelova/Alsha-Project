@@ -1,7 +1,11 @@
 [
     {
         "id": "W001",
-        "certifications": [],
+        "certifications": [
+            "sertifikasi - IT",
+            "sertifikasi - K3",
+            "sertifikasi - Manajemen"
+        ],
         "skills": [
             "Engineer",
             "Project Coordinator",
@@ -11,7 +15,9 @@
     },
     {
         "id": "W002",
-        "certifications": [],
+        "certifications": [
+            "sertifikasi - Kompetensi"
+        ],
         "skills": [
             "Support Engineer"
         ],
@@ -49,48 +55,5 @@
             "SE Coordinator"
         ],
         "name": "HI"
-    },
-    {
-        "id": "W006",
-        "certifications": [
-            "Sertifikasi - IT"
-        ],
-        "skills": [
-            "SE Coordinator"
-        ],
-        "name": "IR"
-    },
-    {
-        "id": "W007",
-        "certifications": [
-            "Sertifikasi - Manajemen",
-            "Sertifikasi - Kompetensi",
-            "Sertifikasi - MR"
-        ],
-        "skills": [
-            "Support Engineer",
-            "SE Coordinator"
-        ],
-        "name": "NP"
-    },
-    {
-        "id": "W008",
-        "certifications": [
-            "Sertifikasi - Programmer"
-        ],
-        "skills": [
-            "SE Coordinator"
-        ],
-        "name": "AL"
-    },
-    {
-        "id": "W009",
-        "certifications": [
-            "Sertifikasi - Kompetensi"
-        ],
-        "skills": [
-            "Support Engineer"
-        ],
-        "name": "IS"
     }
 ]
