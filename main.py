@@ -275,7 +275,7 @@ def manage_data():
         st.subheader("Projects")
     
     if st.button('Refresh Data'):
-        st.experimental_rerun()
+        st.rerun()
     
     projects = load_data('./project_data.json')
     
@@ -299,13 +299,13 @@ def manage_data():
                 project['required_skills'] = new_skills
                 save_data(projects, './project_data.json')
                 st.success(f'Project {project["project_name"]} has been updated!')
-                st.experimental_rerun()
+                st.rerun()
             
             if st.button(f"Delete Project {project['project_name']}", key=f"delete_proj_{i}"):
                 projects.remove(project)
                 save_data(projects, './project_data.json')
                 st.success(f'Project {project["project_name"]} has been deleted!')
-                st.experimental_rerun()
+                st.rerun()
     
     new_project_name = st.text_input('Add new project name', key="new_proj_name")
     new_project_certifications = st.multiselect("Add Required Certifications", certifications_list, key="new_proj_cert")
@@ -321,7 +321,7 @@ def manage_data():
             projects.append(new_project)
             save_data(projects, './project_data.json')
             st.success(f'Project {new_project_name} has been added!')
-            st.experimental_rerun()
+            st.rerun()
 
 # Main
 worker_vectors = load_data('./employee_data.json')
