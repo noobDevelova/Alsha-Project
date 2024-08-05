@@ -174,7 +174,7 @@ def manage_data():
     if data_type == "Employees":
         st.subheader("Employees")
         if st.button('Refresh Data'):
-            st.experimental_rerun()
+            st.rerun()
         employees = load_data('./employee_data.json')
         for i, employee in enumerate(employees):
             with st.expander(f"ID: {employee['id']}, Name: {employee['name']}"):
@@ -202,7 +202,7 @@ def manage_data():
                     employees.remove(employee)
                     save_data(employees, './employee_data.json')
                     st.success(f'Employee {employee["name"]} has been deleted!')
-                    st.experimental_rerun()
+                    st.rerun()
 
         st.title('Input Data Employee')
 
@@ -226,7 +226,7 @@ def manage_data():
     elif data_type == "Certifications":
         st.subheader("Certifications")
         if st.button('Refresh Data'):
-            st.experimental_rerun()
+            st.rerun()
         certifications = load_data('./certifications.json')
         for i, certification in enumerate(certifications):
             with st.expander(certification):
@@ -239,7 +239,7 @@ def manage_data():
                     certifications.remove(certification)
                     save_data(certifications, './certifications.json')
                     st.success(f'Certification {certification} has been deleted!')
-                    st.experimental_rerun()
+                    st.rerun()
         new_certification = st.text_input('Add new certification')
         if st.button('Add Certification'):
             if new_certification and new_certification not in certifications:
@@ -250,7 +250,7 @@ def manage_data():
     elif data_type == "Skills":
         st.subheader("Skills")
         if st.button('Refresh Data'):
-            st.experimental_rerun()
+            st.rerun()
         skills = load_data('./skills.json')
         for i, skill in enumerate(skills):
             with st.expander(skill):
@@ -263,7 +263,7 @@ def manage_data():
                     skills.remove(skill)
                     save_data(skills, './skills.json')
                     st.success(f'Skill {skill} has been deleted!')
-                    st.experimental_rerun()
+                    st.rerun()
         new_skill = st.text_input('Add new skill')
         if st.button('Add Skill'):
             if new_skill and new_skill not in skills:
@@ -274,7 +274,7 @@ def manage_data():
     elif data_type == "Projects":
         st.subheader("Projects")
         if st.button('Refresh Data'):
-            st.experimental_rerun()
+            st.rerun()
         projects = load_data('./project_data.json')
         for i, project in enumerate(projects):
             with st.expander(f"Project Name: {project['project_name']}"):
@@ -301,7 +301,7 @@ def manage_data():
                     projects.remove(project)
                     save_data(projects, './project_data.json')
                     st.success(f'Project {project["project_name"]} has been deleted!')
-                    st.experimental_rerun()
+                    st.rerun()
         new_project_name = st.text_input('Add new project name')
         new_project_certifications = st.multiselect("Add Required Certifications", certifications_list, key="new_proj_cert")
         new_project_skills = st.multiselect("Add Required Skills", skills_list, key="new_proj_skill")
