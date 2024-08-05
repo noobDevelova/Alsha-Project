@@ -42,5 +42,16 @@
             "Project Manager"
         ],
         "project_name": "Project INS"
+    },
+    {
+        "required_certifications": [
+            "sertifikasi - IT",
+            "sertifikasi - K3"
+        ],
+        "required_skills": [
+            "Engineer",
+            "Project Coordinator"
+        ],
+        "project_name": "test"
     }
 ]
